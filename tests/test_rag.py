@@ -15,18 +15,17 @@ class RagTests(unittest.TestCase):
 
     def test_materials_are_split_by_section(self) -> None:
         chunks = load_materials(MATERIALS)
-        self.assertGreaterEqual(len(chunks), 9)
+        self.assertGreaterEqual(len(chunks), 12)
         self.assertTrue(all(chunk.title and chunk.source for chunk in chunks))
 
-    def test_while_query_retrieves_repetition_material(self) -> None:
-        results = self.retriever.search("while infinito atualização do contador", top_k=1)
-        self.assertEqual(results[0].chunk.source, "02_decisao_repeticao.md")
-        self.assertEqual(results[0].chunk.title, "Laço while")
+    def test_portugol_structure_query_retrieves_second_material(self) -> None:
+        results = self.retriever.search("algoritmo var inicio fimalgoritmo", top_k=1)
+        self.assertEqual(results[0].chunk.source, "ma02_portugol.md")
+        self.assertEqual(results[0].chunk.title, "Estrutura de um algoritmo em Portugol")
 
-    def test_linear_search_query_retrieves_search_section(self) -> None:
-        results = self.retriever.search("busca linear complexidade pior caso", top_k=1)
-        self.assertEqual(results[0].chunk.source, "03_vetores_busca.md")
-        self.assertEqual(results[0].chunk.title, "Busca linear")
+    def test_input_output_query_retrieves_third_material(self) -> None:
+        results = self.retriever.search("comandos leia escreva entrada saída", top_k=1)
+        self.assertEqual(results[0].chunk.source, "ma03_sequencial.md")
 
     def test_empty_query_returns_no_results(self) -> None:
         self.assertEqual(self.retriever.search("   "), [])
@@ -34,4 +33,3 @@ class RagTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

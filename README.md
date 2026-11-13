@@ -3,10 +3,14 @@
 MVP de um tutor educacional que consulta materiais da disciplina, responde com
 fontes e oferece feedback formativo para tentativas de exercícios.
 
+O conteúdo acompanha a ementa de **Algoritmos e Programação I**. A etapa atual
+prioriza o raciocínio e a escrita de algoritmos em **Portugol**, preparando a
+transição dos mesmos fundamentos para a linguagem **C**.
+
 O projeto começou como um experimento em Google Colab com o
 `Qwen2.5-Coder-7B-Instruct-AWQ`. Esta versão transforma o notebook em uma
-aplicação Streamlit modular e prepara a base para incorporar os materiais reais
-da disciplina.
+aplicação Streamlit modular fundamentada nos Materiais de Apoio 01, 02 e 03 e na
+Lista de Exercício 001 da disciplina.
 
 ## Demonstração
 
@@ -14,8 +18,8 @@ A aplicação possui três áreas:
 
 - **Visão geral:** apresenta a proposta e o fluxo do sistema;
 - **Tutor:** recupera trechos dos materiais e responde mostrando as fontes;
-- **Exercícios:** analisa código com uma rubrica, destaca acertos e sugere o
-  próximo passo.
+- **Exercícios:** reúne as 20 questões da Lista 001, analisa Portugol com uma
+  rubrica, destaca acertos e sugere o próximo passo.
 
 Por padrão, o app abre em modo de demonstração e não exige credenciais. Nesse
 modo, a recuperação é real e a resposta é extrativa. Um endpoint de Chat
@@ -41,8 +45,8 @@ chatbot-algoritmos/
 ├── app_pages/               # Páginas Streamlit
 ├── services/                # RAG, LLM e feedback
 ├── data/
-│   ├── materiais/           # Base didática demonstrativa
-│   ├── exercicios.json      # Questões e rubricas
+│   ├── materiais/           # Conteúdo recuperável dos materiais 01, 02 e 03
+│   ├── exercicios.json      # 20 questões da Lista 001 e suas rubricas
 │   └── evals/               # Casos de avaliação do retrieval
 ├── scripts/                 # Avaliação reproduzível
 ├── tests/                   # Testes unitários
@@ -86,6 +90,22 @@ A versão atual usa BM25 como baseline local: é rápida, transparente e não ex
 download de modelos. A interface `BM25Retriever.search()` foi isolada para
 permitir a futura substituição por embeddings multilíngues e busca vetorial.
 
+## Conteúdo da disciplina
+
+A base atual cobre:
+
+- lógica de programação, planejamento e decomposição de problemas;
+- descrição narrativa, fluxograma e pseudocódigo;
+- estrutura de um algoritmo em Portugol;
+- variáveis, tipos de dados, declaração e atribuição;
+- entrada, processamento e saída;
+- estrutura sequencial;
+- exercícios de expressões aritméticas, conversões, porcentagens e custos.
+
+As questões exibidas no app mantêm os enunciados e exemplos da **Lista de
+Exercício 001: Introdução a Portugol e Estrutura Sequencial**. Como solicitado na
+própria lista, as soluções desta etapa devem ser escritas em Portugol.
+
 ## Avaliação
 
 Execute os testes e a avaliação de recuperação:
@@ -101,10 +121,11 @@ somente tempo e quantidade de tokens.
 
 ## Decisões de escopo
 
-- O código do aluno **não é executado** nesta versão; a análise é estática.
+- O código em Portugol **não é executado** nesta versão; a análise verifica a
+  estrutura básica e os critérios da rubrica.
 - O feedback não atribui nota e não deve ser usado como decisão acadêmica final.
-- O conteúdo em `data/materiais` é demonstrativo e deve ser substituído pelos
-  materiais revisados pelo professor.
+- Os arquivos em `data/materiais` são versões textuais preparadas para recuperação
+  e não substituem a leitura dos materiais completos da disciplina.
 - O modo sem LLM é intencional: permite avaliar a interface e o retrieval sem
   expor chaves ou depender de um serviço externo.
 - O notebook original e o relatório foram preservados como histórico da prova de
@@ -112,11 +133,11 @@ somente tempo e quantidade de tokens.
 
 ## Próximos passos
 
-1. Importar os materiais reais do semestre, incluindo PDFs e slides;
-2. adicionar embeddings multilíngues e busca híbrida;
-3. criar um conjunto de avaliação revisado pelo professor;
-4. executar código em sandbox com testes públicos e ocultos;
-5. registrar feedback dos alunos para melhorar as rubricas;
+1. Adicionar os próximos materiais conforme o avanço da ementa;
+2. criar exercícios equivalentes em C quando essa linguagem for introduzida;
+3. adicionar embeddings multilíngues e busca híbrida;
+4. ampliar o conjunto de avaliação revisado pelo professor;
+5. integrar um interpretador de Portugol ou uma sandbox segura para C;
 6. preparar uma demonstração publicada e um vídeo curto do fluxo.
 
 ## Autores do protótipo original

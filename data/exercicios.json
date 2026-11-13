@@ -1,146 +1,919 @@
 [
   {
-    "id": "media-tres-notas",
-    "title": "Média de três notas",
-    "topic": "Entrada, processamento e saída",
+    "number": 1,
+    "id": "mensagem-recepcao",
+    "title": "Mensagem de recepção",
+    "topic": "Saída de dados",
     "difficulty": "Iniciante",
-    "answer_type": "python",
-    "statement": "Leia três notas, calcule a média aritmética e mostre o resultado com duas casas decimais.",
-    "starter_code": "nota1 = float(input())\nnota2 = float(input())\nnota3 = float(input())\n\n# Complete a solução",
-    "reference_query": "entrada processamento saída média três notas conversão float",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Desenvolva um programa que apresente uma mensagem de recepção aos estudantes que estão iniciando os estudos de programação.",
+    "example_input": "",
+    "example_output": "Bem-vindo a disciplina de algoritmos!",
+    "starter_code": "algoritmo \"exercicio_01\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol escreva saída mensagem",
     "rubric": [
       {
-        "criterion": "Lê as três entradas numéricas",
-        "terms": ["input", "float"],
-        "match": "all",
-        "min_occurrences": {"input": 3},
-        "hint": "Verifique como cada uma das três notas será lida e convertida para número."
+        "criterion": "Usa o comando de saída",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Apresente a mensagem com escreva()."
       },
       {
-        "criterion": "Calcula a média aritmética",
-        "terms": ["/ 3", "/3"],
-        "hint": "Some as três notas e divida o total pela quantidade de notas."
-      },
-      {
-        "criterion": "Apresenta o resultado",
-        "terms": ["print", ".2f"],
-        "match": "all",
-        "hint": "Mostre a média e considere uma formatação com duas casas decimais."
+        "criterion": "Inclui uma mensagem de recepção",
+        "terms": [
+          "bem-vindo",
+          "bem vindo"
+        ],
+        "hint": "Escreva uma mensagem de recepção para a turma."
       }
     ]
   },
   {
-    "id": "classificar-numero",
-    "title": "Positivo, negativo ou zero",
-    "topic": "Estruturas condicionais",
+    "number": 2,
+    "id": "estudante-curso",
+    "title": "Mensagem personalizada do estudante",
+    "topic": "Entrada e saída",
     "difficulty": "Iniciante",
-    "answer_type": "python",
-    "statement": "Leia um número e informe se ele é positivo, negativo ou igual a zero.",
-    "starter_code": "numero = float(input())\n\n# Escreva as condições",
-    "reference_query": "if elif else condições positivo negativo zero",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Crie um programa que receba o nome de um estudante e o curso em que ele está matriculado. Depois, apresente uma mensagem personalizada.",
+    "example_input": "Nome: Ana Beatriz\nCurso: Tecnologia da Informação",
+    "example_output": "Olá, Ana Beatriz! Seja bem-vinda ao curso de Tecnologia da Informação.",
+    "starter_code": "algoritmo \"exercicio_02\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol literal leia escreva entrada saída",
     "rubric": [
       {
-        "criterion": "Testa um valor maior que zero",
-        "terms": ["> 0", ">0"],
-        "hint": "Crie uma condição para o caso em que o número é maior que zero."
+        "criterion": "Declara dados textuais",
+        "terms": [
+          "literal"
+        ],
+        "hint": "Use variáveis do tipo literal para nome e curso."
       },
       {
-        "criterion": "Testa um valor menor que zero",
-        "terms": ["< 0", "<0"],
-        "hint": "Inclua o caso em que o número é menor que zero."
+        "criterion": "Lê nome e curso",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia as duas informações.",
+        "min_occurrences": {
+          "leia": 2
+        }
       },
       {
-        "criterion": "Trata o zero",
-        "terms": ["else", "== 0", "==0"],
-        "hint": "Depois dos casos positivo e negativo, trate explicitamente o zero."
+        "criterion": "Apresenta uma mensagem personalizada",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Combine texto, nome e curso com escreva()."
       }
     ]
   },
   {
-    "id": "contagem-while",
-    "title": "Contagem com while",
-    "topic": "Estruturas de repetição",
+    "number": 3,
+    "id": "dados-funcionario",
+    "title": "Dados do funcionário",
+    "topic": "Variáveis, entrada e saída",
     "difficulty": "Iniciante",
-    "answer_type": "python",
-    "statement": "Leia um inteiro positivo n e imprima os números de 1 até n usando while.",
-    "starter_code": "n = int(input())\ncontador = 1\n\n# Complete o laço",
-    "reference_query": "laço while inicialização condição atualização contador",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Uma empresa deseja gerar uma mensagem com os dados básicos de seus funcionários. Elabore um programa que receba o nome, o setor e o salário mensal de um funcionário e apresente essas informações de maneira organizada.",
+    "example_input": "Nome: Marcos Oliveira\nSetor: Suporte Técnico\nSalário: 2350.75",
+    "example_output": "Marcos Oliveira trabalha no setor de Suporte Técnico e recebe R$ 2350.75 por mês.",
+    "starter_code": "algoritmo \"exercicio_03\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol literal real leia escreva funcionário salário",
     "rubric": [
       {
-        "criterion": "Usa um laço while",
-        "terms": ["while"],
-        "hint": "Use um laço que continue enquanto o contador não ultrapassar n."
+        "criterion": "Usa tipos adequados para texto e salário",
+        "terms": [
+          "literal",
+          "real"
+        ],
+        "hint": "Declare nome e setor como texto e salário como real.",
+        "match": "all"
       },
       {
-        "criterion": "Define a condição de parada",
-        "terms": ["<= n", "<=n"],
-        "hint": "Confira se a condição inclui o próprio valor de n."
+        "criterion": "Lê as três informações",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia nome, setor e salário.",
+        "min_occurrences": {
+          "leia": 3
+        }
       },
       {
-        "criterion": "Atualiza o contador",
-        "terms": ["+= 1", "+=1", "contador = contador + 1"],
-        "hint": "Atualize o contador em cada iteração para evitar um laço infinito."
+        "criterion": "Apresenta os dados organizados",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre nome, setor e salário em uma mensagem clara."
       }
     ]
   },
   {
-    "id": "maior-elemento",
-    "title": "Maior elemento do vetor",
-    "topic": "Vetores",
-    "difficulty": "Intermediário",
-    "answer_type": "python",
-    "statement": "Implemente uma função que receba uma lista não vazia e devolva seu maior elemento sem usar max().",
-    "starter_code": "def maior_elemento(valores):\n    # Complete a função\n    pass",
-    "reference_query": "vetor maior elemento primeiro valor percorrer lista negativos",
+    "number": 4,
+    "id": "pontuacao-total",
+    "title": "Pontuação total",
+    "topic": "Operações aritméticas",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Em uma competição escolar, cada participante recebe uma pontuação na primeira etapa e outra na segunda. Desenvolva um programa que leia as duas pontuações e apresente o total alcançado.",
+    "example_input": "Informe a pontuação da primeira etapa: 18\nInforme a pontuação da segunda etapa: 27",
+    "example_output": "A pontuação total do participante foi 45 pontos.",
+    "starter_code": "algoritmo \"exercicio_04\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol inteiro soma leia processamento saída",
     "rubric": [
       {
-        "criterion": "Inicializa com um elemento da lista",
-        "terms": ["valores[0]", "lista[0]"],
-        "hint": "Inicialize o maior com o primeiro elemento, não com zero."
+        "criterion": "Lê as duas pontuações",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia as pontuações das duas etapas.",
+        "min_occurrences": {
+          "leia": 2
+        }
       },
       {
-        "criterion": "Percorre os valores",
-        "terms": ["for", "while"],
-        "hint": "Percorra a lista e compare cada valor com o maior conhecido."
+        "criterion": "Soma as pontuações e atribui o resultado",
+        "terms": [
+          "<-",
+          "+"
+        ],
+        "hint": "Calcule o total com uma atribuição e uma soma.",
+        "match": "all"
       },
       {
-        "criterion": "Retorna o maior encontrado",
-        "terms": ["return"],
-        "hint": "Ao terminar o percurso, devolva o valor armazenado."
+        "criterion": "Apresenta o total",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre a pontuação total."
       }
     ]
   },
   {
-    "id": "busca-linear",
-    "title": "Busca linear",
-    "topic": "Busca e complexidade",
-    "difficulty": "Intermediário",
-    "answer_type": "python",
-    "statement": "Implemente busca_linear(valores, alvo), retornando o índice da primeira ocorrência ou -1. Depois explique a complexidade no pior caso em um comentário.",
-    "starter_code": "def busca_linear(valores, alvo):\n    # Complete a função e explique a complexidade\n    pass",
-    "reference_query": "busca linear índice primeira ocorrência retorno -1 complexidade O(n)",
+    "number": 5,
+    "id": "media-ponderada",
+    "title": "Média ponderada",
+    "topic": "Expressões aritméticas",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Um estudante realizou três atividades avaliativas. A primeira nota possui peso 2, a segunda possui peso 3 e a terceira possui peso 5. Desenvolva um programa que receba as três notas, calcule a média ponderada e apresente o resultado.\n\nPara calcular a média ponderada, cada nota deverá ser multiplicada pelo seu respectivo peso. Depois, os resultados deverão ser somados e divididos pela soma dos pesos.",
+    "example_input": "Primeira nota: 7.5\nSegunda nota: 8.0\nTerceira nota: 9.0",
+    "example_output": "A média ponderada foi 8.4.",
+    "starter_code": "algoritmo \"exercicio_05\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol real média ponderada pesos processamento",
     "rubric": [
       {
-        "criterion": "Percorre a sequência",
-        "terms": ["for", "while"],
-        "hint": "Percorra os elementos mantendo acesso ao índice atual."
+        "criterion": "Lê as três notas",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia as três notas.",
+        "min_occurrences": {
+          "leia": 3
+        }
       },
       {
-        "criterion": "Compara cada elemento com o alvo",
-        "terms": ["== alvo", "==alvo"],
-        "hint": "Compare o elemento da posição atual com o valor procurado."
+        "criterion": "Aplica os pesos 2, 3 e 5 e divide por 10",
+        "terms": [
+          "*2",
+          "*3",
+          "*5",
+          "/10"
+        ],
+        "hint": "Multiplique cada nota pelo peso e divida a soma por 10.",
+        "match": "all"
       },
       {
-        "criterion": "Retorna -1 quando não encontra",
-        "terms": ["return -1"],
-        "hint": "Após percorrer toda a sequência sem sucesso, devolva -1."
+        "criterion": "Apresenta a média ponderada",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre o resultado calculado."
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "id": "senha-anterior-proxima",
+    "title": "Senha anterior e próxima",
+    "topic": "Operações com inteiros",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Em uma fila de atendimento, cada pessoa recebe uma senha numérica. Desenvolva um programa que leia uma senha e informe qual número foi chamado imediatamente antes e qual será chamado logo depois.",
+    "example_input": "Senha atual: 250",
+    "example_output": "Senha anterior: 249\nPróxima senha: 251",
+    "starter_code": "algoritmo \"exercicio_06\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol inteiro antecessor sucessor soma subtração",
+    "rubric": [
+      {
+        "criterion": "Lê a senha atual",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia a senha informada."
       },
       {
-        "criterion": "Explica a complexidade linear",
-        "terms": ["o(n)", "linear"],
-        "hint": "Explique quantos elementos podem ser visitados no pior caso."
+        "criterion": "Calcula senha anterior e próxima",
+        "terms": [
+          "-1",
+          "+1"
+        ],
+        "hint": "Use menos um para a anterior e mais um para a próxima.",
+        "match": "all"
+      },
+      {
+        "criterion": "Apresenta os dois resultados",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre a senha anterior e a próxima.",
+        "min_occurrences": {
+          "escreva": 2
+        }
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "id": "quadruplo-metade",
+    "title": "Quádruplo e metade",
+    "topic": "Operações com números reais",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Elabore um programa que receba um número real e apresente o seu quádruplo e a sua metade.",
+    "example_input": "Informe um numero: 12.0",
+    "example_output": "O quádruplo de 12.0 é 48.0.\nA metade de 12.0 é 6.0.",
+    "starter_code": "algoritmo \"exercicio_07\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol real multiplicação divisão quádruplo metade",
+    "rubric": [
+      {
+        "criterion": "Lê um número real",
+        "terms": [
+          "real",
+          "leia"
+        ],
+        "hint": "Declare uma variável real e leia o valor.",
+        "match": "all"
+      },
+      {
+        "criterion": "Calcula quádruplo e metade",
+        "terms": [
+          "*4",
+          "/2"
+        ],
+        "hint": "Calcule o valor vezes quatro e dividido por dois.",
+        "match": "all"
+      },
+      {
+        "criterion": "Apresenta os resultados",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre o quádruplo e a metade."
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "id": "conversao-distancia",
+    "title": "Conversão de distância",
+    "topic": "Conversão de unidades",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Uma equipe registrou a extensão de uma rota em quilômetros. Crie um programa que receba essa distância e apresente o valor correspondente em metros, centímetros e milímetros.",
+    "example_input": "Informe a distancia: 2.35",
+    "example_output": "2.35 km correspondem a:\n2350 metros\n235000 centímetros\n2350000 milímetros",
+    "starter_code": "algoritmo \"exercicio_08\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol real quilômetros metros centímetros milímetros conversão",
+    "rubric": [
+      {
+        "criterion": "Lê a distância em quilômetros",
+        "terms": [
+          "real",
+          "leia"
+        ],
+        "hint": "Leia a distância como um valor real.",
+        "match": "all"
+      },
+      {
+        "criterion": "Converte para metros",
+        "terms": [
+          "1000"
+        ],
+        "hint": "Converta quilômetros para metros usando o fator 1000."
+      },
+      {
+        "criterion": "Calcula centímetros e milímetros",
+        "terms": [
+          "100",
+          "10"
+        ],
+        "hint": "Continue as conversões para centímetros e milímetros.",
+        "match": "all"
+      },
+      {
+        "criterion": "Apresenta as três unidades",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre metros, centímetros e milímetros."
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "id": "conversao-dolar",
+    "title": "Conversão de reais para dólares",
+    "topic": "Divisão e conversão monetária",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Uma pessoa deseja calcular quantos dólares poderá comprar. Desenvolva um programa que receba o valor disponível em reais e a cotação atual do dólar. Depois, apresente o valor correspondente em dólares.",
+    "example_input": "Valor disponível: 1000.00\nCotação do dólar: 5.20",
+    "example_output": "Com R$ 1000,00 é possível comprar aproximadamente US$ 192,31.",
+    "starter_code": "algoritmo \"exercicio_09\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol real divisão reais dólares cotação",
+    "rubric": [
+      {
+        "criterion": "Lê valor disponível e cotação",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia os dois valores reais.",
+        "min_occurrences": {
+          "leia": 2
+        }
+      },
+      {
+        "criterion": "Converte reais para dólares",
+        "terms": [
+          "<-",
+          "/"
+        ],
+        "hint": "Divida o valor em reais pela cotação e armazene o resultado.",
+        "match": "all"
+      },
+      {
+        "criterion": "Apresenta o valor em dólares",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre o valor convertido."
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "id": "tinta-parede",
+    "title": "Quantidade de tinta",
+    "topic": "Área e proporção",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Uma parede receberá duas demãos de tinta. Desenvolva um programa que leia a largura e a altura da parede, calcule sua área e determine a quantidade de tinta necessária. Considere que cada litro de tinta cobre 4 m² e que a área deverá ser pintada duas vezes.",
+    "example_input": "Largura da parede: 5.0 metros\nAltura da parede: 2.8 metros",
+    "example_output": "Área da parede: 14,0 m²\nÁrea total considerando duas demãos: 28,0 m²\nQuantidade necessária de tinta: 7,0 litros",
+    "starter_code": "algoritmo \"exercicio_10\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol área parede duas demãos tinta quatro metros quadrados",
+    "rubric": [
+      {
+        "criterion": "Lê largura e altura",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia as duas dimensões da parede.",
+        "min_occurrences": {
+          "leia": 2
+        }
+      },
+      {
+        "criterion": "Calcula área e duas demãos",
+        "terms": [
+          "*",
+          "*2"
+        ],
+        "hint": "Calcule largura vezes altura e depois considere duas demãos.",
+        "match": "all"
+      },
+      {
+        "criterion": "Calcula litros de tinta",
+        "terms": [
+          "/4"
+        ],
+        "hint": "Divida a área total por quatro."
+      },
+      {
+        "criterion": "Apresenta área e quantidade",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre os resultados intermediários e finais."
+      }
+    ]
+  },
+  {
+    "number": 11,
+    "id": "calculo-delta",
+    "title": "Cálculo de delta",
+    "topic": "Expressões aritméticas",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Em uma equação do segundo grau, o valor do discriminante é calculado pela expressão:\n\ndelta <- b * b - 4 * a * c\n\nCrie um programa que receba os coeficientes a, b e c, e apresente o valor de delta.",
+    "example_input": "Valor de a: 2\nValor de b: -5\nValor de c: -3",
+    "example_output": "O valor de delta é 49.",
+    "starter_code": "algoritmo \"exercicio_11\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol delta discriminante coeficientes expressão",
+    "rubric": [
+      {
+        "criterion": "Lê os coeficientes a, b e c",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia os três coeficientes.",
+        "min_occurrences": {
+          "leia": 3
+        }
+      },
+      {
+        "criterion": "Calcula delta pela expressão dada",
+        "terms": [
+          "b*b",
+          "4*a*c",
+          "-"
+        ],
+        "hint": "Use delta <- b * b - 4 * a * c.",
+        "match": "all"
+      },
+      {
+        "criterion": "Apresenta delta",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre o valor calculado."
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "id": "preco-promocional",
+    "title": "Preço promocional",
+    "topic": "Porcentagem",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Uma loja deseja calcular automaticamente o valor promocional de seus produtos. Desenvolva um programa que receba o preço original e o percentual de desconto. Depois, apresente o valor descontado e o novo preço.",
+    "example_input": "Preço original: R$ 240.00\nPercentual de desconto: 12",
+    "example_output": "Valor do desconto: R$ 28,80\nPreço promocional: R$ 211,20",
+    "starter_code": "algoritmo \"exercicio_12\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol desconto percentual preço promocional",
+    "rubric": [
+      {
+        "criterion": "Lê preço e percentual",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia o preço original e o percentual.",
+        "min_occurrences": {
+          "leia": 2
+        }
+      },
+      {
+        "criterion": "Calcula o valor do desconto",
+        "terms": [
+          "/100",
+          "*"
+        ],
+        "hint": "Transforme o percentual e calcule o desconto.",
+        "match": "all"
+      },
+      {
+        "criterion": "Subtrai o desconto do preço",
+        "terms": [
+          "-"
+        ],
+        "hint": "Calcule o preço promocional."
+      },
+      {
+        "criterion": "Apresenta desconto e novo preço",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre os dois valores.",
+        "min_occurrences": {
+          "escreva": 2
+        }
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "id": "reajuste-salarial",
+    "title": "Reajuste salarial",
+    "topic": "Porcentagem",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Elabore um programa que receba o salário atual de um funcionário e o percentual de reajuste concedido pela empresa. O programa deverá calcular e mostrar o valor do aumento e o novo salário.",
+    "example_input": "Salário atual: 2100.00\nPercentual de reajuste: 7.5",
+    "example_output": "Valor do aumento: R$ 157,50\nNovo salário: R$ 2257,50",
+    "starter_code": "algoritmo \"exercicio_13\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol salário reajuste percentual aumento",
+    "rubric": [
+      {
+        "criterion": "Lê salário e percentual",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia o salário e o percentual.",
+        "min_occurrences": {
+          "leia": 2
+        }
+      },
+      {
+        "criterion": "Calcula o aumento percentual",
+        "terms": [
+          "/100",
+          "*"
+        ],
+        "hint": "Calcule o valor do aumento a partir do percentual.",
+        "match": "all"
+      },
+      {
+        "criterion": "Soma o aumento ao salário",
+        "terms": [
+          "+"
+        ],
+        "hint": "Calcule o novo salário."
+      },
+      {
+        "criterion": "Apresenta aumento e novo salário",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre os dois resultados.",
+        "min_occurrences": {
+          "escreva": 2
+        }
+      }
+    ]
+  },
+  {
+    "number": 14,
+    "id": "aluguel-van",
+    "title": "Aluguel de van",
+    "topic": "Expressão de custo",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Uma empresa cobra R$ 120,00 por dia de aluguel de uma van e mais R$ 0,65 por quilômetro percorrido. Crie um programa que receba a quantidade de dias de locação e a distância percorrida. Depois, calcule o valor total a ser pago.",
+    "example_input": "Dias de aluguel: 3\nDistância percorrida: 280",
+    "example_output": "Valor referente aos dias: R$ 360,00\nValor referente à distância: R$ 182,00\nTotal do aluguel: R$ 542,00",
+    "starter_code": "algoritmo \"exercicio_14\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol custo aluguel dias quilômetros soma",
+    "rubric": [
+      {
+        "criterion": "Lê dias e distância",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia a quantidade de dias e a distância.",
+        "min_occurrences": {
+          "leia": 2
+        }
+      },
+      {
+        "criterion": "Calcula os dois custos",
+        "terms": [
+          "120",
+          "0.65",
+          "*"
+        ],
+        "hint": "Multiplique dias por 120 e distância por 0.65.",
+        "match": "all"
+      },
+      {
+        "criterion": "Soma os custos",
+        "terms": [
+          "+"
+        ],
+        "hint": "Some as duas parcelas."
+      },
+      {
+        "criterion": "Apresenta parcelas e total",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre os custos e o total."
+      }
+    ]
+  },
+  {
+    "number": 15,
+    "id": "salario-periodo",
+    "title": "Salário do período",
+    "topic": "Multiplicação",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Um profissional recebe de acordo com a quantidade de horas trabalhadas. Desenvolva um programa que leia o número de dias trabalhados, a carga horária diária e o valor recebido por hora. Depois, calcule o salário do período.",
+    "example_input": "Dias trabalhados: 20\nHoras trabalhadas por dia: 6\nValor recebido por hora: 18.50",
+    "example_output": "Total de horas trabalhadas: 120\nSalário do período: R$ 2220,00",
+    "starter_code": "algoritmo \"exercicio_15\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol dias horas valor hora salário período",
+    "rubric": [
+      {
+        "criterion": "Lê dias, horas diárias e valor por hora",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia as três entradas.",
+        "min_occurrences": {
+          "leia": 3
+        }
+      },
+      {
+        "criterion": "Calcula o total de horas",
+        "terms": [
+          "*"
+        ],
+        "hint": "Multiplique dias pelas horas diárias."
+      },
+      {
+        "criterion": "Calcula o salário",
+        "terms": [
+          "*"
+        ],
+        "hint": "Multiplique o total de horas pelo valor da hora.",
+        "min_occurrences": {
+          "*": 2
+        }
+      },
+      {
+        "criterion": "Apresenta horas e salário",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre os dois resultados.",
+        "min_occurrences": {
+          "escreva": 2
+        }
+      }
+    ]
+  },
+  {
+    "number": 16,
+    "id": "tempo-cigarros",
+    "title": "Estimativa de tempo",
+    "topic": "Conversão de tempo",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Para uma simulação educativa, considere que cada cigarro consumido representa uma redução estimada de 10 minutos de vida. Desenvolva um programa que receba a quantidade média de cigarros consumidos por dia e o número de anos em que a pessoa manteve esse hábito. Considere 365 dias por ano e apresente o resultado final em dias.",
+    "example_input": "Cigarros consumidos por dia: 8\nAnos de consumo: 12",
+    "example_output": "Quantidade estimada de cigarros consumidos: 35040\nTempo estimado: 243,33 dias.",
+    "starter_code": "algoritmo \"exercicio_16\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol cigarros anos minutos dias conversão 365",
+    "rubric": [
+      {
+        "criterion": "Lê consumo diário e anos",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia as duas entradas.",
+        "min_occurrences": {
+          "leia": 2
+        }
+      },
+      {
+        "criterion": "Estima a quantidade de cigarros",
+        "terms": [
+          "365",
+          "*"
+        ],
+        "hint": "Multiplique consumo diário, 365 dias e anos.",
+        "match": "all"
+      },
+      {
+        "criterion": "Converte minutos para dias",
+        "terms": [
+          "10",
+          "60",
+          "24"
+        ],
+        "hint": "Converta dez minutos por cigarro para horas e dias.",
+        "match": "all"
+      },
+      {
+        "criterion": "Apresenta as estimativas",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre a quantidade de cigarros e o tempo em dias."
+      }
+    ]
+  },
+  {
+    "number": 17,
+    "id": "gasto-energia",
+    "title": "Gasto mensal de energia",
+    "topic": "Consumo e custo",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Um laboratório deseja estimar o gasto mensal de energia de um equipamento. Crie um programa que receba a potência do aparelho em quilowatts, o número de horas de uso por dia, a quantidade de dias utilizados e o preço do quilowatt-hora.",
+    "example_input": "Potência do equipamento: 1.5\nUso diário em horas: 4\nDias utilizados: 30\nPreço do quilowatt-hora: 0.95",
+    "example_output": "Consumo mensal: 180 kWh\nCusto estimado: R$ 171,00",
+    "starter_code": "algoritmo \"exercicio_17\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol potência horas dias quilowatt hora consumo custo",
+    "rubric": [
+      {
+        "criterion": "Lê as quatro entradas",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia potência, horas, dias e preço do kWh.",
+        "min_occurrences": {
+          "leia": 4
+        }
+      },
+      {
+        "criterion": "Calcula o consumo mensal",
+        "terms": [
+          "*"
+        ],
+        "hint": "Multiplique potência, horas por dia e dias.",
+        "min_occurrences": {
+          "*": 2
+        }
+      },
+      {
+        "criterion": "Calcula o custo",
+        "terms": [
+          "*"
+        ],
+        "hint": "Multiplique o consumo pelo preço do kWh.",
+        "min_occurrences": {
+          "*": 3
+        }
+      },
+      {
+        "criterion": "Apresenta consumo e custo",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre os dois resultados."
+      }
+    ]
+  },
+  {
+    "number": 18,
+    "id": "custo-viagem",
+    "title": "Combustível e custo da viagem",
+    "topic": "Divisão e custo",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Desenvolva um programa que receba a distância de uma viagem, o consumo médio do veículo em quilômetros por litro e o preço do combustível. O programa deverá apresentar a quantidade estimada de litros e o custo da viagem.",
+    "example_input": "Distância da viagem em km: 360\nConsumo do veículo: 12\nPreço do combustível: 6.20",
+    "example_output": "Combustível necessário: 30 litros\nCusto estimado da viagem: R$ 186,00",
+    "starter_code": "algoritmo \"exercicio_18\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol distância consumo veículo litros preço combustível",
+    "rubric": [
+      {
+        "criterion": "Lê distância, consumo e preço",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia as três informações.",
+        "min_occurrences": {
+          "leia": 3
+        }
+      },
+      {
+        "criterion": "Calcula os litros necessários",
+        "terms": [
+          "/"
+        ],
+        "hint": "Divida a distância pelo consumo médio."
+      },
+      {
+        "criterion": "Calcula o custo da viagem",
+        "terms": [
+          "*"
+        ],
+        "hint": "Multiplique os litros pelo preço."
+      },
+      {
+        "criterion": "Apresenta litros e custo",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre os dois resultados."
+      }
+    ]
+  },
+  {
+    "number": 19,
+    "id": "ajuste-receita",
+    "title": "Ajuste de receita",
+    "topic": "Proporção",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Uma receita utiliza determinada quantidade de um ingrediente para servir quatro pessoas. Crie um programa que receba a quantidade original do ingrediente, o número de pessoas atendidas pela receita e o novo número de pessoas. Depois, calcule a quantidade necessária do ingrediente.",
+    "example_input": "Quantidade original de arroz em gramas: 500\nPessoas atendidas pela receita: 4\nNova quantidade de pessoas: 10",
+    "example_output": "Para servir 10 pessoas serão necessários 1250 gramas de arroz.",
+    "starter_code": "algoritmo \"exercicio_19\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol proporção receita ingrediente pessoas quantidade",
+    "rubric": [
+      {
+        "criterion": "Lê quantidade e números de pessoas",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia as três entradas.",
+        "min_occurrences": {
+          "leia": 3
+        }
+      },
+      {
+        "criterion": "Calcula a proporção",
+        "terms": [
+          "/",
+          "*"
+        ],
+        "hint": "Divida pela quantidade original de pessoas e multiplique pela nova.",
+        "match": "all"
+      },
+      {
+        "criterion": "Apresenta a nova quantidade",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre a quantidade necessária."
+      }
+    ]
+  },
+  {
+    "number": 20,
+    "id": "divisao-evento",
+    "title": "Divisão das despesas do evento",
+    "topic": "Custo total e divisão",
+    "difficulty": "Iniciante",
+    "answer_type": "portugol",
+    "source": "Lista de Exercício 001: Introdução a Portugol e Estrutura Sequencial",
+    "statement": "Um grupo realizará um evento e dividirá igualmente todas as despesas. Desenvolva um programa que receba o valor do aluguel do espaço, o custo da alimentação por pessoa e a quantidade de participantes. Apresente o custo total e o valor que cada participante deverá pagar.",
+    "example_input": "Valor do aluguel do espaço: 750.00\nValor de alimentação por pessoa: 28.00\nQuantidade de participantes: 25",
+    "example_output": "Custo total do evento: R$ 1450,00\nValor por participante: R$ 58,00",
+    "starter_code": "algoritmo \"exercicio_20\"\n\nvar\n    // declare as variaveis\n\ninicio\n    // escreva sua solucao\n\nfimalgoritmo",
+    "reference_query": "portugol aluguel alimentação participantes custo total divisão",
+    "rubric": [
+      {
+        "criterion": "Lê aluguel, alimentação e participantes",
+        "terms": [
+          "leia"
+        ],
+        "hint": "Leia as três entradas.",
+        "min_occurrences": {
+          "leia": 3
+        }
+      },
+      {
+        "criterion": "Calcula o custo total",
+        "terms": [
+          "*",
+          "+"
+        ],
+        "hint": "Multiplique a alimentação pelos participantes e some o aluguel.",
+        "match": "all"
+      },
+      {
+        "criterion": "Divide o total entre os participantes",
+        "terms": [
+          "/"
+        ],
+        "hint": "Divida o custo total pela quantidade de participantes."
+      },
+      {
+        "criterion": "Apresenta total e valor individual",
+        "terms": [
+          "escreva"
+        ],
+        "hint": "Mostre os dois resultados.",
+        "min_occurrences": {
+          "escreva": 2
+        }
       }
     ]
   }
 ]
-

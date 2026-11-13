@@ -28,7 +28,7 @@ st.session_state.setdefault(
     [
         {
             "role": "assistant",
-            "content": "Olá! Posso explicar conceitos de Algoritmos usando os materiais da disciplina. O que você está estudando?",
+            "content": "Olá! Posso explicar os conteúdos da ementa usando os materiais da disciplina, com exemplos em Portugol e em C. O que você está estudando?",
             "sources": [],
             "mode": "system",
         }
@@ -47,7 +47,7 @@ for message in st.session_state.tutor_messages:
                     )
                     st.caption(source["excerpt"])
 
-if question := st.chat_input("Ex.: Por que um while pode entrar em laço infinito?"):
+if question := st.chat_input("Ex.: Qual é a estrutura básica de um algoritmo em Portugol?"):
     st.session_state.tutor_messages.append(
         {"role": "user", "content": question, "sources": [], "mode": "user"}
     )

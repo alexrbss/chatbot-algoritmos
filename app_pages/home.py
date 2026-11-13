@@ -15,8 +15,9 @@ st.markdown(
       <div class="eyebrow">IA generativa aplicada à educação</div>
       <h1>Aprenda Algoritmos<br/>com pistas, não atalhos.</h1>
       <p>
-        Um tutor que recupera o material da disciplina, responde com fontes e
-        transforma tentativas de exercícios em feedback formativo.
+        Este tutor segue a ementa de Algoritmos e Programação I. Por isso,
+        acompanha a construção do raciocínio em Portugol e a transição dos
+        mesmos fundamentos para a linguagem C.
       </p>
     </section>
     """,
@@ -55,8 +56,8 @@ with left:
         """
         **No Tutor**
 
-        - Pergunte por que um `while` pode entrar em laço infinito.
-        - Compare busca linear e acesso por índice.
+        - Pergunte qual é a estrutura de um algoritmo em Portugol.
+        - Peça uma comparação entre atribuição em Portugol e em C.
         - Confira quais fontes sustentam a resposta.
         """
     )
@@ -67,7 +68,7 @@ with right:
         """
         **Nos Exercícios**
 
-        - Escolha uma das cinco questões.
+        - Escolha uma das 20 questões da Lista 001.
         - Envie uma tentativa incompleta de propósito.
         - Observe a rubrica identificar o próximo passo.
         """
@@ -76,7 +77,7 @@ with right:
         st.switch_page("app_pages/exercicios.py")
 
 st.info(
-    "A base incluída é demonstrativa. Os materiais reais do semestre podem ser "
-    "adicionados em `data/materiais` sem alterar a interface."
+    "A base atual acompanha os Materiais de Apoio 01, 02 e 03 e a Lista de "
+    "Exercício 001. Nesta etapa da ementa, as respostas da lista são escritas em Portugol."
 )
 

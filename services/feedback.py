@@ -43,15 +43,32 @@ def load_exercises(path: Path) -> list[dict]:
     return exercises
 
 
-def _check_python_syntax(submission: str, answer_type: str) -> tuple[bool | None, str | None]:
-    if answer_type != "python":
-        return None, None
-    try:
-        ast.parse(submission)
-        return True, "A estrutura enviada possui sintaxe Python válida."
-    except SyntaxError as exc:
-        location = f"linha {exc.lineno}" if exc.lineno else "posição desconhecida"
-        return False, f"Há um erro de sintaxe na {location}: {exc.msg}."
+def _check_submission_syntax(
+    submission: str, answer_type: str
+) -> tuple[bool | None, str | None]:
+    if answer_type == "python":
+        try:
+            ast.parse(submission)
+            return True, "A estrutura enviada possui sintaxe Python válida."
+        except SyntaxError as exc:
+            location = f"linha {exc.lineno}" if exc.lineno else "posição desconhecida"
+            return False, f"Há um erro de sintaxe na {location}: {exc.msg}."
+
+    if answer_type == "portugol":
+        normalized = normalize_text(submission)
+        required = ["algoritmo", "var", "inicio", "fimalgoritmo"]
+        missing = [item for item in required if item not in normalized]
+        if missing:
+            return (
+                False,
+                "A estrutura de Portugol está incompleta. Faltam: " + ", ".join(missing) + ".",
+            )
+        positions = [normalized.find(item) for item in required]
+        if positions != sorted(positions):
+            return False, "Revise a ordem: algoritmo, var, inicio e fimalgoritmo."
+        return True, "A tentativa contém a estrutura básica de um algoritmo em Portugol."
+
+    return None, None
 
 
 def _demo_narrative(
@@ -83,15 +100,24 @@ def analyze_submission(
     client: OpenAICompatibleClient | None = None,
 ) -> FeedbackReport:
     normalized_submission = normalize_text(submission)
+    compact_submission = "".join(normalized_submission.split())
     checks: list[CriterionCheck] = []
     for item in exercise["rubric"]:
         terms = [normalize_text(term) for term in item.get("terms", [])]
+        term_matches = [
+            term in normalized_submission or "".join(term.split()) in compact_submission
+            for term in terms
+        ]
         if item.get("match") == "all":
-            met = all(term in normalized_submission for term in terms) if terms else False
+            met = all(term_matches) if terms else False
         else:
-            met = any(term in normalized_submission for term in terms) if terms else False
+            met = any(term_matches) if terms else False
         for term, minimum in item.get("min_occurrences", {}).items():
-            met = met and normalized_submission.count(normalize_text(term)) >= minimum
+            normalized_term = normalize_text(term)
+            met = met and max(
+                normalized_submission.count(normalized_term),
+                compact_submission.count("".join(normalized_term.split())),
+            ) >= minimum
         checks.append(
             CriterionCheck(
                 criterion=item["criterion"],
@@ -100,7 +126,7 @@ def analyze_submission(
             )
         )
 
-    syntax_ok, syntax_message = _check_python_syntax(
+    syntax_ok, syntax_message = _check_submission_syntax(
         submission, exercise.get("answer_type", "text")
     )
     strengths = [check.criterion for check in checks if check.met]

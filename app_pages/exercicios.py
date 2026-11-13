@@ -12,9 +12,15 @@ retriever = get_retriever()
 client = get_llm_client()
 
 st.title("Laboratório de exercícios")
-st.caption("Envie uma tentativa e receba feedback formativo — sem nota e sem solução automática.")
+st.caption(
+    "As 20 questões abaixo são da Lista de Exercício 001. Envie a solução em Portugol "
+    "e receba feedback formativo — sem nota e sem solução automática."
+)
 
-labels = {exercise["id"]: f"{exercise['title']} · {exercise['difficulty']}" for exercise in exercises}
+labels = {
+    exercise["id"]: f"{exercise['number']:02d} · {exercise['title']}"
+    for exercise in exercises
+}
 selected_id = st.selectbox(
     "Escolha um exercício",
     options=list(labels),
@@ -29,6 +35,15 @@ meta_3.metric("Critérios", len(exercise["rubric"]))
 
 st.markdown("### Enunciado")
 st.write(exercise["statement"])
+st.caption(f"{exercise['source']} · Questão {exercise['number']:02d} · Resposta em Portugol")
+
+example_left, example_right = st.columns(2)
+with example_left:
+    st.markdown("#### Exemplo de entrada")
+    st.code(exercise["example_input"] or "Sem entrada.", language="text")
+with example_right:
+    st.markdown("#### Exemplo de saída")
+    st.code(exercise["example_output"], language="text")
 
 with st.expander("Ver os critérios de feedback"):
     for item in exercise["rubric"]:
@@ -42,7 +57,7 @@ submission = st.text_area(
     "Sua tentativa",
     key=submission_key,
     height=250,
-    help="A análise é estática: o código não é executado nesta versão do MVP.",
+    help="A análise verifica a estrutura e a rubrica de Portugol, mas não executa o código.",
 )
 
 if st.button("Analisar tentativa", type="primary", use_container_width=True):
