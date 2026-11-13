@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local RAG indexes and user uploads
+data/indexes/
+data/uploads/
+
+# macOS
+.DS_Store

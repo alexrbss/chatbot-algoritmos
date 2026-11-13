@@ -1,0 +1,146 @@
+[
+  {
+    "id": "media-tres-notas",
+    "title": "Média de três notas",
+    "topic": "Entrada, processamento e saída",
+    "difficulty": "Iniciante",
+    "answer_type": "python",
+    "statement": "Leia três notas, calcule a média aritmética e mostre o resultado com duas casas decimais.",
+    "starter_code": "nota1 = float(input())\nnota2 = float(input())\nnota3 = float(input())\n\n# Complete a solução",
+    "reference_query": "entrada processamento saída média três notas conversão float",
+    "rubric": [
+      {
+        "criterion": "Lê as três entradas numéricas",
+        "terms": ["input", "float"],
+        "match": "all",
+        "min_occurrences": {"input": 3},
+        "hint": "Verifique como cada uma das três notas será lida e convertida para número."
+      },
+      {
+        "criterion": "Calcula a média aritmética",
+        "terms": ["/ 3", "/3"],
+        "hint": "Some as três notas e divida o total pela quantidade de notas."
+      },
+      {
+        "criterion": "Apresenta o resultado",
+        "terms": ["print", ".2f"],
+        "match": "all",
+        "hint": "Mostre a média e considere uma formatação com duas casas decimais."
+      }
+    ]
+  },
+  {
+    "id": "classificar-numero",
+    "title": "Positivo, negativo ou zero",
+    "topic": "Estruturas condicionais",
+    "difficulty": "Iniciante",
+    "answer_type": "python",
+    "statement": "Leia um número e informe se ele é positivo, negativo ou igual a zero.",
+    "starter_code": "numero = float(input())\n\n# Escreva as condições",
+    "reference_query": "if elif else condições positivo negativo zero",
+    "rubric": [
+      {
+        "criterion": "Testa um valor maior que zero",
+        "terms": ["> 0", ">0"],
+        "hint": "Crie uma condição para o caso em que o número é maior que zero."
+      },
+      {
+        "criterion": "Testa um valor menor que zero",
+        "terms": ["< 0", "<0"],
+        "hint": "Inclua o caso em que o número é menor que zero."
+      },
+      {
+        "criterion": "Trata o zero",
+        "terms": ["else", "== 0", "==0"],
+        "hint": "Depois dos casos positivo e negativo, trate explicitamente o zero."
+      }
+    ]
+  },
+  {
+    "id": "contagem-while",
+    "title": "Contagem com while",
+    "topic": "Estruturas de repetição",
+    "difficulty": "Iniciante",
+    "answer_type": "python",
+    "statement": "Leia um inteiro positivo n e imprima os números de 1 até n usando while.",
+    "starter_code": "n = int(input())\ncontador = 1\n\n# Complete o laço",
+    "reference_query": "laço while inicialização condição atualização contador",
+    "rubric": [
+      {
+        "criterion": "Usa um laço while",
+        "terms": ["while"],
+        "hint": "Use um laço que continue enquanto o contador não ultrapassar n."
+      },
+      {
+        "criterion": "Define a condição de parada",
+        "terms": ["<= n", "<=n"],
+        "hint": "Confira se a condição inclui o próprio valor de n."
+      },
+      {
+        "criterion": "Atualiza o contador",
+        "terms": ["+= 1", "+=1", "contador = contador + 1"],
+        "hint": "Atualize o contador em cada iteração para evitar um laço infinito."
+      }
+    ]
+  },
+  {
+    "id": "maior-elemento",
+    "title": "Maior elemento do vetor",
+    "topic": "Vetores",
+    "difficulty": "Intermediário",
+    "answer_type": "python",
+    "statement": "Implemente uma função que receba uma lista não vazia e devolva seu maior elemento sem usar max().",
+    "starter_code": "def maior_elemento(valores):\n    # Complete a função\n    pass",
+    "reference_query": "vetor maior elemento primeiro valor percorrer lista negativos",
+    "rubric": [
+      {
+        "criterion": "Inicializa com um elemento da lista",
+        "terms": ["valores[0]", "lista[0]"],
+        "hint": "Inicialize o maior com o primeiro elemento, não com zero."
+      },
+      {
+        "criterion": "Percorre os valores",
+        "terms": ["for", "while"],
+        "hint": "Percorra a lista e compare cada valor com o maior conhecido."
+      },
+      {
+        "criterion": "Retorna o maior encontrado",
+        "terms": ["return"],
+        "hint": "Ao terminar o percurso, devolva o valor armazenado."
+      }
+    ]
+  },
+  {
+    "id": "busca-linear",
+    "title": "Busca linear",
+    "topic": "Busca e complexidade",
+    "difficulty": "Intermediário",
+    "answer_type": "python",
+    "statement": "Implemente busca_linear(valores, alvo), retornando o índice da primeira ocorrência ou -1. Depois explique a complexidade no pior caso em um comentário.",
+    "starter_code": "def busca_linear(valores, alvo):\n    # Complete a função e explique a complexidade\n    pass",
+    "reference_query": "busca linear índice primeira ocorrência retorno -1 complexidade O(n)",
+    "rubric": [
+      {
+        "criterion": "Percorre a sequência",
+        "terms": ["for", "while"],
+        "hint": "Percorra os elementos mantendo acesso ao índice atual."
+      },
+      {
+        "criterion": "Compara cada elemento com o alvo",
+        "terms": ["== alvo", "==alvo"],
+        "hint": "Compare o elemento da posição atual com o valor procurado."
+      },
+      {
+        "criterion": "Retorna -1 quando não encontra",
+        "terms": ["return -1"],
+        "hint": "Após percorrer toda a sequência sem sucesso, devolva -1."
+      },
+      {
+        "criterion": "Explica a complexidade linear",
+        "terms": ["o(n)", "linear"],
+        "hint": "Explique quantos elementos podem ser visitados no pior caso."
+      }
+    ]
+  }
+]
+

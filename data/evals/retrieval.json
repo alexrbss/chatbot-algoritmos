@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Qual é a diferença entre variável e constante em Python?",
+    "expected_source": "01_fundamentos.md"
+  },
+  {
+    "question": "Por que meu while entrou em laço infinito?",
+    "expected_source": "02_decisao_repeticao.md"
+  },
+  {
+    "question": "Como encontro o maior número se todos forem negativos?",
+    "expected_source": "03_vetores_busca.md"
+  },
+  {
+    "question": "Qual é a complexidade da busca linear no pior caso?",
+    "expected_source": "03_vetores_busca.md"
+  },
+  {
+    "question": "Como converter uma entrada para número real em Python?",
+    "expected_source": "01_fundamentos.md"
+  }
+]
