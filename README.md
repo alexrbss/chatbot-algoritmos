@@ -14,12 +14,14 @@ Lista de Exercício 001 da disciplina.
 
 ## Demonstração
 
-A aplicação possui três áreas:
+A aplicação possui quatro áreas:
 
 - **Visão geral:** apresenta a proposta e o fluxo do sistema;
 - **Tutor:** recupera trechos dos materiais e responde mostrando as fontes;
 - **Exercícios:** reúne as 20 questões da Lista 001, analisa Portugol com uma
-  rubrica, destaca acertos e sugere o próximo passo.
+  rubrica, destaca acertos e sugere o próximo passo;
+- **Gerenciar materiais:** valida um PDF, mostra a extração, testa a recuperação
+  e só atualiza a base depois de uma aprovação humana.
 
 Por padrão, o app abre em modo de demonstração e não exige credenciais. Nesse
 modo, a recuperação é real e a resposta é extrativa. Um endpoint de Chat
@@ -38,6 +40,10 @@ flowchart LR
     F --> G[Resposta com fontes e próximo passo]
     E --> H[Fallback demonstrativo]
     H --> G
+    I[Novo PDF] --> J[Validação e extração]
+    J --> K[Prévia e teste de busca]
+    K --> L[Aprovação humana]
+    L --> B
 ```
 
 ```text
@@ -46,6 +52,7 @@ chatbot-algoritmos/
 ├── services/                # RAG, LLM e feedback
 ├── data/
 │   ├── materiais/           # Conteúdo recuperável dos materiais 01, 02 e 03
+│   ├── materials_manifest.json # Histórico e hashes das ingestões automáticas
 │   ├── exercicios.json      # 20 questões da Lista 001 e suas rubricas
 │   └── evals/               # Casos de avaliação do retrieval
 ├── scripts/                 # Avaliação reproduzível
@@ -83,8 +90,15 @@ específica. Segredos nunca devem ser adicionados ao Git.
 
 ## Adicionar materiais
 
-Coloque arquivos `.md` ou `.txt` em `data/materiais`. Cada título Markdown (`#`,
-`##` ou `###`) cria um trecho recuperável e identificável como fonte.
+Use a página **Gerenciar materiais** para enviar um PDF. A automação valida o
+arquivo, extrai o texto por página, bloqueia duplicatas pelo hash SHA-256 e
+permite testar a recuperação antes de confirmar. O PDF original não é salvo: só
+a versão textual aprovada é gravada em `data/materiais`, acompanhada de um
+registro em `data/materials_manifest.json`.
+
+Também é possível colocar arquivos `.md` ou `.txt` manualmente em
+`data/materiais`. Cada título Markdown (`#`, `##` ou `###`) cria um trecho
+recuperável e identificável como fonte.
 
 A versão atual usa BM25 como baseline local: é rápida, transparente e não exige
 download de modelos. A interface `BM25Retriever.search()` foi isolada para
@@ -126,6 +140,8 @@ somente tempo e quantidade de tokens.
 - O feedback não atribui nota e não deve ser usado como decisão acadêmica final.
 - Os arquivos em `data/materiais` são versões textuais preparadas para recuperação
   e não substituem a leitura dos materiais completos da disciplina.
+- A ingestão de PDF exige revisão humana e ainda não executa OCR em documentos
+  compostos somente por imagens.
 - O modo sem LLM é intencional: permite avaliar a interface e o retrieval sem
   expor chaves ou depender de um serviço externo.
 - O notebook original e o relatório foram preservados como histórico da prova de
@@ -133,7 +149,7 @@ somente tempo e quantidade de tokens.
 
 ## Próximos passos
 
-1. Adicionar os próximos materiais conforme o avanço da ementa;
+1. Adicionar OCR opcional para materiais escaneados;
 2. criar exercícios equivalentes em C quando essa linguagem for introduzida;
 3. adicionar embeddings multilíngues e busca híbrida;
 4. ampliar o conjunto de avaliação revisado pelo professor;

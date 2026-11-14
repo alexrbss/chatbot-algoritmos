@@ -42,6 +42,7 @@ cards = [
     ("02 · Recuperação", "A busca local encontra os trechos mais relevantes da disciplina."),
     ("03 · Evidências", "O modelo recebe contexto controlado e uma rubrica explícita."),
     ("04 · Feedback", "A resposta destaca acertos, lacunas e o próximo passo."),
+    ("05 · Atualização", "Novos PDFs passam por revisão, teste de busca e registro antes da indexação."),
 ]
 cards_html = "".join(
     f'<div class="feature-card"><div class="eyebrow">{title}</div><p>{description}</p></div>'
@@ -75,6 +76,17 @@ with right:
     )
     if st.button("Praticar exercícios", use_container_width=True):
         st.switch_page("app_pages/exercicios.py")
+
+st.markdown("### Automação da base de conhecimento")
+automation_left, automation_right = st.columns([2, 1])
+with automation_left:
+    st.write(
+        "Envie um novo material em PDF, revise o texto extraído, teste a recuperação "
+        "e aprove a atualização do tutor — com histórico e bloqueio de duplicatas."
+    )
+with automation_right:
+    if st.button("Gerenciar materiais", use_container_width=True):
+        st.switch_page("app_pages/materiais.py")
 
 st.info(
     "A base atual acompanha os Materiais de Apoio 01, 02 e 03 e a Lista de "

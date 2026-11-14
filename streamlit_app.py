@@ -90,6 +90,7 @@ pages = [
     st.Page("app_pages/home.py", title="Visão geral", icon="🏠", default=True),
     st.Page("app_pages/tutor.py", title="Tutor", icon="💬"),
     st.Page("app_pages/exercicios.py", title="Exercícios", icon="🧩"),
+    st.Page("app_pages/materiais.py", title="Gerenciar materiais", icon="⚙️"),
 ]
 
 with st.sidebar:

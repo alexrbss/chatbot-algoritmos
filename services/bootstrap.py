@@ -14,6 +14,7 @@ from services.rag import BM25Retriever
 ROOT = Path(__file__).resolve().parents[1]
 MATERIALS_DIR = ROOT / "data" / "materiais"
 EXERCISES_PATH = ROOT / "data" / "exercicios.json"
+MANIFEST_PATH = ROOT / "data" / "materials_manifest.json"
 
 
 @st.cache_resource(show_spinner="Indexando materiais da disciplina...")
