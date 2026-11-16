@@ -116,10 +116,6 @@ A base atual cobre:
 - estrutura sequencial;
 - exercícios de expressões aritméticas, conversões, porcentagens e custos.
 
-As questões exibidas no app mantêm os enunciados e exemplos da **Lista de
-Exercício 001: Introdução a Portugol e Estrutura Sequencial**. Como solicitado na
-própria lista, as soluções desta etapa devem ser escritas em Portugol.
-
 ## Avaliação
 
 Execute os testes e a avaliação de recuperação:
@@ -133,30 +129,11 @@ A avaliação calcula `Hit@3` e `MRR` em perguntas pequenas com fonte esperada. 
 objetivo é tornar a qualidade da recuperação verificável, em vez de avaliar
 somente tempo e quantidade de tokens.
 
-## Decisões de escopo
-
-- O código em Portugol **não é executado** nesta versão; a análise verifica a
-  estrutura básica e os critérios da rubrica.
-- O feedback não atribui nota e não deve ser usado como decisão acadêmica final.
-- Os arquivos em `data/materiais` são versões textuais preparadas para recuperação
-  e não substituem a leitura dos materiais completos da disciplina.
-- A ingestão de PDF exige revisão humana e ainda não executa OCR em documentos
-  compostos somente por imagens.
-- O modo sem LLM é intencional: permite avaliar a interface e o retrieval sem
-  expor chaves ou depender de um serviço externo.
-- O notebook original e o relatório foram preservados como histórico da prova de
-  conceito.
-
 ## Próximos passos
 
 1. Adicionar OCR opcional para materiais escaneados;
-2. criar exercícios equivalentes em C quando essa linguagem for introduzida;
-3. adicionar embeddings multilíngues e busca híbrida;
-4. ampliar o conjunto de avaliação revisado pelo professor;
-5. integrar um interpretador de Portugol ou uma sandbox segura para C;
-6. preparar uma demonstração publicada e um vídeo curto do fluxo.
-
-## Autores do protótipo original
-
-- Luis Felipe Pereira de Paiva Pordeus
-- Rubens Alexandre de Sousa Ferreira
+2. Criar exercícios equivalentes em C quando essa linguagem for introduzida;
+3. Adicionar embeddings multilíngues e busca híbrida;
+4. Ampliar o conjunto de avaliação revisado pelo professor;
+5. Integrar um interpretador de Portugol ou uma sandbox segura para C;
+6. Preparar uma demonstração publicada e um vídeo curto do fluxo.
