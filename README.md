@@ -9,10 +9,24 @@ transição dos mesmos fundamentos para a linguagem **C**.
 
 O projeto começou como um experimento em Google Colab com o
 `Qwen2.5-Coder-7B-Instruct-AWQ`. Esta versão transforma o notebook em uma
-aplicação Streamlit modular fundamentada nos Materiais de Apoio 01, 02 e 03 e na
-Lista de Exercício 001 da disciplina.
+aplicação Streamlit modular fundamentada nos materiais de apoio e nas listas de
+exercícios elaborados para a disciplina.
 
-## Demonstração
+O projeto foi desenvolvido durante minha atuação como **monitor de Algoritmos e
+Programação I**. Os materiais de apoio e as listas de exercícios que fundamentam
+a base de conhecimento e as atividades do MVP foram elaborados por mim para uso
+na disciplina.
+
+## Acesso ao MVP
+
+**[Abrir demonstração ao vivo →](http://13.217.22.43)**
+
+A versão pública está hospedada em uma instância EC2 do AWS Academy Learner Lab
+e funciona em modo somente leitura. Por ser uma implantação acadêmica temporária,
+o endereço usa HTTP e pode ficar indisponível quando o laboratório ou a instância
+estiverem desligados.
+
+## Funcionalidades
 
 A aplicação possui quatro áreas:
 
