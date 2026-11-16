@@ -2,6 +2,8 @@
 
 import streamlit as st
 
+import ui
+
 from services.bootstrap import get_exercises, get_llm_client, get_retriever
 
 
@@ -9,46 +11,42 @@ retriever = get_retriever()
 exercises = get_exercises()
 client = get_llm_client()
 
+st.title("Algoritmos com pistas, não com atalhos")
+ui.hero(
+    [
+        'algoritmo "tutor"',
+        "inicio",
+        '  escreval("Com pistas,")',
+        '  escreval("sem atalhos.")',
+        "fimalgoritmo",
+    ],
+    ["Com pistas,", "sem atalhos."],
+)
 st.markdown(
-    """
-    <section class="hero">
-      <div class="eyebrow">IA generativa aplicada à educação</div>
-      <h1>Aprenda Algoritmos<br/>com pistas, não atalhos.</h1>
-      <p>
-        Este tutor segue a ementa de Algoritmos e Programação I. Por isso,
-        acompanha a construção do raciocínio em Portugol e a transição dos
-        mesmos fundamentos para a linguagem C.
-      </p>
-    </section>
-    """,
+    '<p class="lead">Um tutor para Algoritmos e Programação I. Ele acompanha o '
+    "raciocínio em Portugol e leva os mesmos fundamentos para a linguagem C, "
+    "sempre apontando de onde veio a explicação.</p>",
+    unsafe_allow_html=True,
+)
+material_count = len({chunk.source for chunk in retriever.chunks})
+mode = "LLM conectado" if client.configured else "modo demonstração"
+st.markdown(
+    f'<p class="base">Base atual: <b>{material_count} materiais</b>, '
+    f'<b>{len(retriever.chunks)} trechos</b> recuperáveis e '
+    f'<b>{len(exercises)} exercícios</b>. Modelo em <b>{mode}</b>.</p>',
     unsafe_allow_html=True,
 )
 
-st.markdown(
-    f"""
-    <div class="metric-grid">
-      <div class="metric-card"><div class="metric-label">Materiais indexados</div><div class="metric-value">{len({chunk.source for chunk in retriever.chunks})}</div></div>
-      <div class="metric-card"><div class="metric-label">Trechos recuperáveis</div><div class="metric-value">{len(retriever.chunks)}</div></div>
-      <div class="metric-card"><div class="metric-label">Exercícios</div><div class="metric-value">{len(exercises)}</div></div>
-      <div class="metric-card"><div class="metric-label">Modo do modelo</div><div class="metric-value">{"LLM" if client.configured else "Demo"}</div></div>
-    </div>
-    """,
-    unsafe_allow_html=True,
+st.subheader("O caminho de uma pergunta")
+ui.flow(
+    [
+        ("Você pergunta ou envia uma tentativa", "Em texto livre ou com seu código em Portugol."),
+        ("O tutor busca nos materiais", "A recuperação local seleciona os trechos mais próximos da dúvida."),
+        ("A resposta mostra as fontes", "O modelo recebe contexto controlado e uma rubrica explícita."),
+        ("Você recebe feedback", "Acertos, lacunas e o próximo passo, sem entregar a solução automaticamente."),
+        ("A base pode evoluir", "Novos PDFs passam por revisão e teste antes da indexação."),
+    ]
 )
-
-st.markdown("## Como funciona")
-cards = [
-    ("01 · Pergunta", "O aluno pergunta ou envia uma tentativa de solução."),
-    ("02 · Recuperação", "A busca local encontra os trechos mais relevantes da disciplina."),
-    ("03 · Evidências", "O modelo recebe contexto controlado e uma rubrica explícita."),
-    ("04 · Feedback", "A resposta destaca acertos, lacunas e o próximo passo."),
-    ("05 · Atualização", "Novos PDFs passam por revisão, teste de busca e registro antes da indexação."),
-]
-cards_html = "".join(
-    f'<div class="feature-card"><div class="eyebrow">{title}</div><p>{description}</p></div>'
-    for title, description in cards
-)
-st.markdown(f'<div class="feature-grid">{cards_html}</div>', unsafe_allow_html=True)
 
 st.markdown("## O que experimentar")
 left, right = st.columns([1.1, 1])

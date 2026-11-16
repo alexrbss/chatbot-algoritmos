@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import os
 from pathlib import Path
 
 import streamlit as st
@@ -23,6 +24,9 @@ def suggested_title(filename: str) -> str:
     return Path(filename).stem.replace("_", " ").replace("-", " ").strip().title()
 
 
+READ_ONLY = os.getenv("APP_READ_ONLY", "").strip().lower() in {"1", "true", "yes", "on"}
+
+
 st.title("Gerenciar materiais")
 st.caption(
     "Automação local para transformar um PDF revisado em conteúdo recuperável pelo tutor."
@@ -32,6 +36,12 @@ st.info(
     "O PDF permanece somente em memória. Após sua aprovação, o sistema salva apenas o "
     "texto em Markdown e um registro de auditoria com hash, data e quantidade de páginas."
 )
+
+if READ_ONLY:
+    st.warning(
+        "Demonstração pública em modo somente leitura. O fluxo permanece visível, "
+        "mas uploads e alterações da base estão bloqueados."
+    )
 
 with st.expander("Como funciona esta automação"):
     st.markdown(
@@ -54,6 +64,7 @@ st.markdown("### 1 · Envie e identifique")
 uploaded = st.file_uploader(
     "Material em PDF",
     type=["pdf"],
+    disabled=READ_ONLY,
     help="Limite do MVP: 15 MB e 120 páginas. PDFs escaneados ainda não passam por OCR.",
 )
 
@@ -68,19 +79,21 @@ title = st.text_input(
     "Título do material",
     key="material_title",
     placeholder="Ex.: Estruturas condicionais",
+    disabled=READ_ONLY,
 )
 number = st.number_input(
     "Número do material (opcional)",
     min_value=0,
     max_value=99,
     value=0,
+    disabled=READ_ONLY,
     help="Use 0 quando o material não fizer parte da sequência MA01, MA02, …",
 )
 
 if st.button(
     "Analisar PDF",
     type="primary",
-    disabled=uploaded is None,
+    disabled=READ_ONLY or uploaded is None,
     use_container_width=True,
 ):
     try:

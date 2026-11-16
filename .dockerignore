@@ -1,0 +1,13 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.py[cod]
+*.pdf
+*.ipynb
+.env
+.env.*
+!.env.example
+data/indexes
+data/uploads
+tests

@@ -56,8 +56,11 @@ chatbot-algoritmos/
 │   ├── exercicios.json      # 20 questões da Lista 001 e suas rubricas
 │   └── evals/               # Casos de avaliação do retrieval
 ├── scripts/                 # Avaliação reproduzível
+├── deploy/                  # Inicialização reproduzível da EC2
 ├── tests/                   # Testes unitários
+├── Dockerfile               # Imagem para execução em cloud
 ├── streamlit_app.py         # Entrada da aplicação
+├── ui.py                    # Tema e componentes visuais compartilhados
 └── chatbot_algoritmos_qwen-2.ipynb
 ```
 
@@ -73,6 +76,35 @@ streamlit run streamlit_app.py
 ```
 
 O Streamlit mostrará o endereço local da aplicação no terminal.
+
+## Executar com Docker
+
+```bash
+docker build -t chatbot-algoritmos .
+docker run --rm -p 8501:8501 chatbot-algoritmos
+```
+
+O container inclui um health check no endpoint `/_stcore/health`. Para uma
+demonstração pública, use `-e APP_READ_ONLY=true` para impedir que visitantes
+alterem a base de conhecimento.
+
+## Implantação demonstrativa na AWS
+
+O arquivo `deploy/aws-ec2-user-data.sh` prepara uma instância Amazon Linux 2023,
+instala Docker, clona a branch `main` e publica o Streamlit na porta HTTP 80. A
+versão pública inicia em modo somente leitura e mantém Tutor, Exercícios e a
+visualização do pipeline de materiais disponíveis.
+
+Configuração mínima sugerida para a demonstração:
+
+- EC2 Amazon Linux 2023, arquitetura `x86_64`;
+- tipo de instância de baixo custo compatível com o Learner Lab;
+- 8 GB de volume EBS;
+- Security Group com HTTP 80 aberto para a internet;
+- sem chaves ou segredos de LLM na imagem.
+
+O ambiente do Learner Lab é temporário. O endereço público e os recursos devem
+ser tratados como demonstração acadêmica, não como hospedagem permanente.
 
 ## Conectar um modelo
 

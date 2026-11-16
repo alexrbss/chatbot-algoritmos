@@ -2,6 +2,8 @@
 
 import streamlit as st
 
+import ui
+
 from services.bootstrap import get_exercises, get_llm_client, get_retriever
 from services.feedback import analyze_submission
 from services.llm import answer_question
@@ -70,6 +72,7 @@ if st.button("Analisar tentativa", type="primary", use_container_width=True):
             )
             report = analyze_submission(exercise, submission, results, client)
             st.session_state[f"report_{selected_id}"] = (report, results)
+            st.session_state[f"hint_level_{selected_id}"] = 1
 
 stored = st.session_state.get(f"report_{selected_id}")
 if stored:
@@ -82,23 +85,32 @@ if stored:
     elif report.syntax_ok is False:
         st.error(report.syntax_message)
 
-    st.markdown(report.narrative.text)
+    criteria_col, hints_col = st.columns(2, gap="large")
+    with criteria_col:
+        st.markdown("#### Critérios")
+        ui.criteria(
+            [
+                (check.criterion, "ok" if check.met else "miss")
+                for check in report.checks
+            ]
+        )
+    with hints_col:
+        st.markdown("#### Escada de pistas")
+        hints = report.improvements[:3]
+        if hints:
+            hint_key = f"hint_level_{selected_id}"
+            shown = min(st.session_state.get(hint_key, 1), len(hints))
+            ui.ladder(hints, shown)
+            if shown < len(hints) and st.button(
+                "Preciso de mais uma pista", key=f"more_hint_{selected_id}"
+            ):
+                st.session_state[hint_key] = shown + 1
+                st.rerun()
+        else:
+            st.success("Todos os critérios foram identificados. Faça um teste de mesa.")
 
-    strength_col, improve_col = st.columns(2)
-    with strength_col:
-        st.markdown("#### Já aparece na tentativa")
-        if report.strengths:
-            for strength in report.strengths:
-                st.markdown(f"- ✅ {strength}")
-        else:
-            st.caption("Nenhum critério foi identificado ainda — isso faz parte da primeira tentativa.")
-    with improve_col:
-        st.markdown("#### Próximos ajustes")
-        if report.improvements:
-            for improvement in report.improvements[:3]:
-                st.markdown(f"- 🔎 {improvement}")
-        else:
-            st.markdown("- Faça testes de mesa e considere casos limite.")
+    st.markdown("#### Feedback do tutor")
+    st.markdown(report.narrative.text)
 
     st.info(f"**Próximo passo:** {report.next_step}")
     with st.expander("Materiais usados no feedback"):
